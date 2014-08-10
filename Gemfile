@@ -40,3 +40,6 @@ gem 'spring',        group: :development
 
 # Rest Client for API Calls
 gem 'rest-client'
+
+# slim-rails for templates
+gem 'slim-rails'
