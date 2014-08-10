@@ -43,3 +43,6 @@ gem 'rest-client'
 
 # slim-rails for templates
 gem 'slim-rails'
+
+# Add font-awesome
+gem 'font-awesome-sass'
