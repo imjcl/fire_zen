@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'zen#index'
+  get '/zen' => 'zen#get_new_zen', as: :zen
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
