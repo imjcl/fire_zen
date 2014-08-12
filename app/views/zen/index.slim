@@ -1,5 +1,7 @@
-p
-  = @zen.inspect
+ul
+  - @zen.body.each do |q|
+    li
+      = q[1]["quote"]
 
 p
-  = link_to 'Get a new quote', root_path
+  = link_to 'Get a new quote', zen_path
