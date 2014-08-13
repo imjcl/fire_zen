@@ -26,3 +26,10 @@ $ ->
   $('.fa-thumbs-down').click ->
     ref_name = $(this).parent().attr('class')
     addVote(ref_name, 'dislikes')
+
+  myDataRef.on 'child_changed', (snapshot) ->
+    zen = snapshot.val()
+    zen_name = snapshot.name()
+    $(".#{zen_name} span.likes").text(zen.likes)
+    $(".#{zen_name} span.dislikes").text(zen.dislikes)
+
