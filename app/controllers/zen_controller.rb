@@ -5,6 +5,8 @@ class ZenController < ApplicationController
 
   def get_new_zen
     FirezenHandler.send_fire_zen
-    redirect_to root_url
+    respond_to do |format|
+      format.html
+    end
   end
 end
