@@ -7,8 +7,8 @@ $ ->
       first = false
     else
       zen = snapshot.val()
-      console.log(zen)
-      displayZen(zen)
+      zen_name = snapshot.name()
+      displayZen(zen, zen_name)
 
-  displayZen = (zen) ->
-    $('<li/>').text(zen.quote).addClass('hi').appendTo($('ul.zen'))
+  displayZen = (zen, name) ->
+    $('<li/>').text(zen.quote).addClass(name).appendTo($('ul.zen'))

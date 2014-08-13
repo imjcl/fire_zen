@@ -1,6 +1,6 @@
 ul class="zen"
   - @zen.body.each do |q|
-    li
+    li class="#{q[0]}"
       => q[1]["quote"]
 
 p
