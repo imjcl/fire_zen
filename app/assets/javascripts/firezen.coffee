@@ -14,8 +14,15 @@ $ ->
     $('<li/>').text(zen.quote).addClass(name).appendTo($('ul.zen'))
     $(".#{name}").append('<i class="fa fa-thumbs-up fa-lg"></i><i class="fa fa-thumbs-down fa-lg"></i>')
 
+  addVote = (ref_name, direction) ->
+    zen_ref = myDataRef.child("#{ref_name}/#{direction}")
+    zen_ref.transaction (current_value) ->
+      (current_value || 0) + 1  
+
   $('.fa-thumbs-up').click ->
     ref_name = $(this).parent().attr('class')
-    zen_ref = myDataRef.child("#{ref_name}/likes")
-    zen_ref.transaction (current_value) ->
-      (current_value || 0) + 1
+    addVote(ref_name, 'likes')
+
+  $('.fa-thumbs-down').click ->
+    ref_name = $(this).parent().attr('class')
+    addVote(ref_name, 'dislikes')
