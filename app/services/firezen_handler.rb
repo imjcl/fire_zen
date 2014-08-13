@@ -6,6 +6,6 @@ class FirezenHandler
 
   def self.get_fire_zen
     firebase = Firebase::Client.new(ENV['FIREBASE'])
-    firebase.get("zen")
+    firebase.get("zen").body.sort_by { |z| z[1]["likes"]}.reverse
   end
 end
