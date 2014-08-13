@@ -6,8 +6,9 @@ $ ->
     if (first)
       first = false
     else
-      message = snapshot.val()
-      displayZen(message.quote)
+      zen = snapshot.val()
+      console.log(zen)
+      displayZen(zen)
 
-  displayZen = (quote) ->
-    $('<li/>').text(quote).appendTo($('ul.zen'))
+  displayZen = (zen) ->
+    $('<li/>').text(zen.quote).addClass('hi').appendTo($('ul.zen'))
