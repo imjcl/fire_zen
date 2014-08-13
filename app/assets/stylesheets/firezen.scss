@@ -1,5 +1,10 @@
-.thumbs {
-  i {
-    margin: 0 12px;
+li {
+  margin: 12px 0;
+}
+
+i {
+  &::before {
+    padding: 0 8px;
   }
+  margin: 0 12px;
 }
