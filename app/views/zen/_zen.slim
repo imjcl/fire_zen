@@ -1,8 +1,8 @@
-li class="#{q[0]}"
-  => q[1]["quote"]
+li class="#{quote[0]}"
+  => quote[1]["quote"]
   i class="fa fa-thumbs-up fa-lg"
     span class="likes"
-      => likes_dislikes q[1]["likes"]
+      => likes_dislikes quote[1]["likes"]
   i class="fa fa-thumbs-down fa-lg"
     span class="dislikes"
-      => likes_dislikes q[1]["dislikes"]
+      => likes_dislikes quote[1]["dislikes"]

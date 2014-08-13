@@ -1,6 +1,6 @@
 ul class="zen"
-  - @zen.each do |q|
-    = render 'zen', q: q
+  - @zen.each do |quote|
+    = render 'zen', quote: quote
 
 p
   = link_to 'Get a new quote', zen_path, remote: true
