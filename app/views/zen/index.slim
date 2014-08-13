@@ -2,8 +2,6 @@ ul class="zen"
   - @zen.body.each do |q|
     li
       => q[1]["quote"]
-      span class="thumbs"
-        i class="fa fa-thumbs-up fa-lg"
-        i class="fa fa-thumbs-down fa-lg"
+
 p
-  = link_to 'Get a new quote', zen_path
+  = link_to 'Get a new quote', zen_path, remote: true
