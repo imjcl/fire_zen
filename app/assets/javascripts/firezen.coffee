@@ -12,7 +12,7 @@ $ ->
 
   displayZen = (zen, name) ->
     $('<li/>').text(zen.quote).addClass(name).appendTo($('ul.zen'))
-    $(".#{name}").append('<i class="fa fa-thumbs-up fa-lg"></i><i class="fa fa-thumbs-down fa-lg"></i>')
+    $(".#{name}").append("<i class='fa fa-thumbs-up fa-lg'><span class='likes'>#{zen.likes}</span></i><i class='fa fa-thumbs-down fa-lg'><span class='dislikes'>#{zen.dislikes}</span></i>")
 
   addVote = (ref_name, direction) ->
     zen_ref = myDataRef.child("#{ref_name}/#{direction}")
