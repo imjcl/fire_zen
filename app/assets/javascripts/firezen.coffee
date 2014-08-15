@@ -1,4 +1,5 @@
-$ ->
+$(document).on "page:update", ->
+  alert('page has loaded')
   myDataRef = new Firebase('https://popping-heat-1530.firebaseio.com/zen')
 
   addVote = (ref_name, direction) ->
