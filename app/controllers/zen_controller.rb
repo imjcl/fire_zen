@@ -5,6 +5,5 @@ class ZenController < ApplicationController
 
   def from_new_zen
     FirezenHandler.send_fire_zen
-    end
   end
 end
