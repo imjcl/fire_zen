@@ -1,7 +1,8 @@
 class FirezenHandler
   def self.send_fire_zen
     quote = ZenServices.get_zen
-    FirebaseServices.push_zen quote
+    response = FirebaseServices.push_zen quote
+    [[response.body["name"], {"quote" => quote, "likes" => 0, "dislikes" => 0}]]
   end
 
   def self.get_fire_zen

@@ -4,6 +4,6 @@ class ZenController < ApplicationController
   end
 
   def from_new_zen
-    FirezenHandler.send_fire_zen
+    @new_zen = FirezenHandler.send_fire_zen
   end
 end
