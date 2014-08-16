@@ -1,4 +1,4 @@
-$(document).on "page:update", ->
+$ ->
   myDataRef = new Firebase('https://popping-heat-1530.firebaseio.com/zen')
 
   addVote = (ref_name, direction) ->
@@ -6,11 +6,11 @@ $(document).on "page:update", ->
     zen_ref.transaction (current_value) ->
       (current_value || 0) + 1  
 
-  $('.fa-thumbs-up').click ->
+  $('body').on 'click', '.fa-thumbs-up', ->
     ref_name = $(this).parent().attr('class')
     addVote(ref_name, 'likes')
 
-  $('.fa-thumbs-down').click ->
+  $('body').on 'click', '.fa-thumbs-down',  ->
     ref_name = $(this).parent().attr('class')
     addVote(ref_name, 'dislikes')
 
