@@ -1,1 +1,1 @@
-$("<%= escape_javascript(render partial: 'zen', locals: { zen: @new_zen } ) %>").appendTo('.zen')
+#$("<%= escape_javascript(render partial: 'zen', locals: { zen: @new_zen } ) %>").appendTo('.zen')
