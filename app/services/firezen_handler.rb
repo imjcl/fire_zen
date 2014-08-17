@@ -1,13 +1,25 @@
 class FirezenHandler
   def self.send_fire_zen
     quote = ZenServices.get_zen
-    response = FirebaseServices.push_zen quote
-    [[response.body["name"], {"quote" => quote, "likes" => 0, "dislikes" => 0}]]
+    existing_quotes = get_just_quotes
+    unless existing_quotes.include? quote
+      response = FirebaseServices.push_zen quote
+      [[response.body["name"], {"quote" => quote, "likes" => 0, "dislikes" => 0}]]
+    end
   end
 
   def self.get_fire_zen
     firebase = Firebase::Client.new(ENV['FIREBASE'])
     get_unique_zens firebase.get("zen").body.sort_by { |z| z[1]["likes"]}.reverse
+  end
+
+  def self.get_just_quotes
+    firebase = Firebase::Client.new(ENV['FIREBASE'])
+    my_zens = []
+    firebase.get("zen").body.each do |zen|
+      my_zens << zen[1]["quote"]
+    end
+    my_zens
   end
 
   def self.get_unique_zens zens
