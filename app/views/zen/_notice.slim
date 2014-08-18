@@ -1,3 +1,13 @@
 - if duplicate
-  div id="notice"
-    |yea, this request generated a duplicate, not rendering right?
+  div id="notice-modal" class="modal fade"
+    div class="modal-dialog"
+      div class="modal-content"
+        div class="modal-body text-center"
+          h2
+            |Sorry! This zen already exists...
+        div class="modal-footer"
+          button type="button" class="btn btn-default" data-dismiss="modal"
+            |Close
+  javascript:
+    $('#notice-modal').modal('show')
+    
