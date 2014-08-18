@@ -8,6 +8,8 @@ class ZenController < ApplicationController
   end
 
   def submit_zen
-    @is_duplicate = FirezenHandler.submit_fire_zen params[:submit_zen]
+    unless params[:submit_zen].length == 0
+      @is_duplicate = FirezenHandler.submit_fire_zen params[:submit_zen]
+    end
   end
 end
