@@ -11,7 +11,7 @@ $ ->
       displayZen(zen, zen_name)
 
   displayZen = (zen, name) ->
-    $('<div/>').text(zen.quote).addClass(name).appendTo($('.zen'))
+    $('<h1/>').text(zen.quote).appendTo($('.zen')).wrap("<div class='#{name}'/>")
     $(".#{name}").append("<i class='fa fa-thumbs-up fa-lg'><span class='likes'>#{zen.likes}</span></i><i class='fa fa-thumbs-down fa-lg'><span class='dislikes'>#{zen.dislikes}</span></i>")
 
   addVote = (ref_name, direction) ->
