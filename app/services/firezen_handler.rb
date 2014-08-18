@@ -1,8 +1,8 @@
 class FirezenHandler
   def self.send_fire_zen
     quote = ZenServices.get_zen
-    existing_quotes = get_just_quotes
-    if existing_quotes.include? quote
+    existing_quotes = get_just_quotes.map { |zen| zen.lower }
+    if existing_quotes.include? quote.lower
       true
     else
       response = FirebaseServices.push_zen quote
