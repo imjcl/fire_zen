@@ -49,4 +49,3 @@ gem 'font-awesome-sass'
 
 # Firebase Support
 gem 'firebase'
-gem 'rest-firebase'
