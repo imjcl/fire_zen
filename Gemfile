@@ -46,6 +46,7 @@ gem 'slim-rails'
 
 # Add font-awesome
 gem 'font-awesome-sass'
+gem 'bootstrap-sass'
 
 # Firebase Support
 gem 'firebase'
