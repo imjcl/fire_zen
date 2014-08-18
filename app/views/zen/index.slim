@@ -3,3 +3,7 @@ div class="zen"
 
 p
   = link_to 'Get a new quote', from_new_zen_path, remote: true, class: "get_new"
+
+= form_tag submit_zen_path, remote: true, id: 'submit_zen_form'
+  = text_field_tag 'submit_zen', nil, size: 35
+  = submit_tag 'Submit Zen'
