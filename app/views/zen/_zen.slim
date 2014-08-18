@@ -1,9 +1,10 @@
 - zen.each do |quote|
   div class="#{quote[0]}"
-    = quote[1]["quote"]
-    i class="fa fa-thumbs-up fa-lg"
+    h1
+      = quote[1]["quote"]
+    i class="fa fa-thumbs-up fa-2x"
       span class="likes"
         => likes_dislikes quote[1]["likes"]
-    i class="fa fa-thumbs-down fa-lg"
+    i class="fa fa-thumbs-down fa-2x"
       span class="dislikes"
         => likes_dislikes quote[1]["dislikes"]
