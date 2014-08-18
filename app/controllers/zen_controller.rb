@@ -4,6 +4,6 @@ class ZenController < ApplicationController
   end
 
   def from_new_zen
-    @new_zen = FirezenHandler.send_fire_zen
+    @is_duplicate = FirezenHandler.send_fire_zen
   end
 end
