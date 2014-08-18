@@ -1,9 +1,13 @@
-div class="zen"
+div class="zen text-center"
   = render 'zen', zen: @zen
 
-p
-  = link_to 'Get a new quote', from_new_zen_path, remote: true, class: "get_new"
+p class="text-center"
+  = link_to 'Get a new quote', from_new_zen_path, remote: true, class: "get_new btn btn-default"
 
-= form_tag submit_zen_path, remote: true, id: 'submit_zen_form'
-  = text_field_tag 'submit_zen', nil, size: 35
-  = submit_tag 'Submit Zen'
+div class="container-fluid"
+  div class="row"
+    div class="col-lg-4 col-lg-offset-4 text-center"
+      = form_tag submit_zen_path, remote: true, id: 'submit_zen_form'
+        div class="form-group"
+          = text_field_tag 'submit_zen', nil, size: 35, class: 'form-control'
+        = submit_tag 'Submit zen', class: "btn btn-default"
