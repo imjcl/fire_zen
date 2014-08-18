@@ -2,9 +2,11 @@ class FirezenHandler
   def self.send_fire_zen
     quote = ZenServices.get_zen
     existing_quotes = get_just_quotes
-    unless existing_quotes.include? quote
+    if existing_quotes.include? quote
+      true
+    else
       response = FirebaseServices.push_zen quote
-      [[response.body["name"], {"quote" => quote, "likes" => 0, "dislikes" => 0}]]
+      false
     end
   end
 
