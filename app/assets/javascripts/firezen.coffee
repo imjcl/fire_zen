@@ -11,7 +11,8 @@ $ ->
       displayZen(zen, zen_name)
 
   displayZen = (zen, name) ->
-    $('<h1/>').text(zen.quote).appendTo($('.zen')).wrap("<div class='#{name}'/>")
+    rng = Math.floor(Math.random() * 6) + 1
+    $('<h1/>').text(zen.quote).appendTo($('.zen')).wrap("<div class='#{name} font-bg-#{rng}'/>")
     $(".#{name}").append("<i class='fa fa-thumbs-up fa-2x'><span class='likes'>#{zen.likes}</span></i><i class='fa fa-thumbs-down fa-2x'><span class='dislikes'>#{zen.dislikes}</span></i>")
 
   addVote = (ref_name, direction) ->
