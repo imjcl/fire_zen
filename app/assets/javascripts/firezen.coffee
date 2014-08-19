@@ -22,10 +22,12 @@ $ ->
 
   $('body').on 'click', '.fa-thumbs-up', ->
     ref_name = $(this).parent().attr('class')
+    ref_name = ("#{ref_name}".split " ")[0]
     addVote(ref_name, 'likes')
 
   $('body').on 'click', '.fa-thumbs-down',  ->
     ref_name = $(this).parent().attr('class')
+    ref_name = ("#{ref_name}".split " ")[0]
     addVote(ref_name, 'dislikes')
 
   myDataRef.on 'child_changed', (snapshot) ->
