@@ -1,11 +1,11 @@
 div class="zen text-center"
   = render 'zen', zen: @zen
 
-p class="text-center"
-  = link_to 'Get a new quote', from_new_zen_path, remote: true, class: "get_new btn btn-default"
-
-div class="submit_zens text-center"
-  = form_tag submit_zen_path, remote: true, id: 'submit_zen_form'
-    div class="form-group"
-      = text_field_tag 'submit_zen', nil, size: 35, class: 'form-control', required: true
-    = submit_tag 'Submit zen', class: "btn btn-default"
+div class="submit_container"
+  div class="submit_zens text-center"
+    h2 Didn't see a quote you like?
+    p Go ahead and submit your own below!
+    = form_tag submit_zen_path, remote: true, id: 'submit_zen_form'
+      div class="form-group"
+        = text_field_tag 'submit_zen', nil, size: 35, class: 'form-control', required: true
+      = submit_tag 'SUBMIT ZEN QUOTE', class: "btn btn-default"
