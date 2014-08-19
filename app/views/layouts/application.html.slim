@@ -9,4 +9,11 @@ html
     script src="https://cdn.firebase.com/js/client/1.0.15/firebase.js"
 
   body
+    nav class="navbar navbar-inverse navbar-static-top" role="navigation"
+      div class="container"
+        h1 class="navbar-left"
+          |FIREZEN
+        p class="navbar-text navbar-right"
+          = link_to 'Get a new quote', from_new_zen_path, remote: true, class: "get_new btn btn-success btn-lg"
+  
     = yield
