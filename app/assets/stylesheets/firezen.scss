@@ -1,3 +1,16 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:300);
+body {
+  background: #000;
+}
+
+.navbar {
+  margin-bottom: 0px;
+  color: white;
+  h1 {
+    text-transform: uppercase;
+  }
+}
+
 .zen {
   h1 {
     margin: 0 0 16px;
@@ -23,16 +36,36 @@ i {
   }
   margin: 0 12px;
 }
-
 a {
   &.get_new {
-    margin: 20px 0
+    text-transform: uppercase;
+    font-weight: bold;
   }
+
+  &.btn-success{
+    background-color: #2DCC70;
+  }
+}
+.submit_container {
+  background: #297FB8;
 }
 
 .submit_zens {
+  font-family: 'Roboto', sans-serif;
   max-width: 650px;
   margin: 0 auto;
+  padding-top: 24px;
+  padding-bottom: 48px;
+  color: white;
+  text-transform: uppercase;
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 2.65rem;
+  }
 }
 
 form {
