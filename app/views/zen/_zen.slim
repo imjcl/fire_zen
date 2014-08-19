@@ -1,5 +1,5 @@
 - zen.each do |quote|
-  div class="#{quote[0]}"
+  div *{class: ["#{quote[0]}", "#{font_bg_randomizer}"]}
     h1
       = quote[1]["quote"]
     i class="fa fa-thumbs-up fa-2x"
