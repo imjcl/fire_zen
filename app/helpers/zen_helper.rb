@@ -4,4 +4,8 @@ module ZenHelper
 
     num
   end
+
+  def font_bg_randomizer
+    "font-bg-#{(Random.new.rand(6) + 1).to_s}"
+  end
 end
