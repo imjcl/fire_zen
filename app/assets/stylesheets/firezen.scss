@@ -24,6 +24,13 @@ body {
       margin-top: 0;
     }
   }
+
+  span {
+    &.likes,
+    &.dislikes {
+      font-family: 'Roboto', sans-serif;
+    }
+  }
 }
 
 li {
@@ -44,6 +51,9 @@ a {
 
   &.btn-success{
     background-color: #2DCC70;
+    &:hover, &:focus, &:active {
+      background-color: #16A086;
+    }
   }
 }
 .submit_container {
