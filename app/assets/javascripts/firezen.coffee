@@ -8,12 +8,22 @@ $ ->
     else
       zen = snapshot.val()
       zen_name = snapshot.name()
-      displayZen(zen, zen_name)
+      if $("##{zen_name}").length == 0
+        displayZen(zen, zen_name)
+
+  myDataRef.on 'child_removed', (snapshot) ->
+    zen = snapshot.val()
+    zen_name = snapshot.name()
+    removeZen(zen, zen_name)
+
+  removeZen = (zen, name) ->
+    console.log 'something changed'
+    $('#'+ "#{name}").remove()
 
   displayZen = (zen, name) ->
     rng = Math.floor(Math.random() * 6) + 1
-    $('<h1/>').text(zen.quote).appendTo($('.zen')).wrap("<div class='#{name} font-bg-#{rng}'/>")
-    $(".#{name}").append("<i class='fa fa-thumbs-up fa-2x'><span class='likes'>#{zen.likes}</span></i><i class='fa fa-thumbs-down fa-2x'><span class='dislikes'>#{zen.dislikes}</span></i>")
+    $('<h1/>').text(zen.quote).appendTo($('.zen')).wrap("<div id='#{name}' class='font-bg-#{rng}'/>")
+    $("##{name}").append("<i class='fa fa-thumbs-up fa-2x'><span class='likes'>#{zen.likes}</span></i><i class='fa fa-thumbs-down fa-2x'><span class='dislikes'>#{zen.dislikes}</span></i>")
 
   addVote = (ref_name, direction) ->
     zen_ref = myDataRef.child("#{ref_name}/#{direction}")
